@@ -11,4 +11,4 @@ RUN mvn clean package
 FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/video-stream-processor-1.0.0.jar /app
-CMD ["java -jar spring-petclinic-1.5.1.jar"]
+CMD ["java -jar video-stream-processor-1.0.0.jar"]
