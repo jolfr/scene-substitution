@@ -104,7 +104,7 @@
 				<configuration>
 					<archive>
 						<manifest>
-							<mainClass>com.iot.video.app.spark.processor.VideoStreamProcessor</mainClass>
+							<mainClass>com.iot.video.app.kafka.collector.VideoStreamCollector</mainClass>
 						</manifest>
 					</archive>
 				</configuration>
