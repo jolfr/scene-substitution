@@ -1,16 +1,12 @@
 version: "3.3"
 services:
   video-collector:
-    build: .
-    ports:
-    volumes:
+    build: video-stream-analytics/video-stream-collector/.
     depends_on:
       - kafka
       - video-processor
   video-processor:
-    build: .
-    ports:
-    volumes:
+    build: video-stream-analytics/video-stream-processor/.
     depends_on:
       - kafka
   kafka:
