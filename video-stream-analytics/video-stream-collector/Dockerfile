@@ -4,10 +4,10 @@ RUN git clone https://github.com/jolfr/scene-substitution.git
 
 FROM maven:3.5-jdk-8-alpine as build
 WORKDIR /app
-COPY --from=clone /video-stream-analytics/video-stream-collector/src /app
-RUN mvn clean package exec:java -Dexec.mainClass="com.iot.video.app.spark.processor.VideoStreamProcessor"
+COPY --from=clone /app/scene-substitution/video-stream-analytics/video-stream-collector/src /app
+RUN mvn clean package
 
 FROM openjdk:8-jre-alpine
 WORKDIR /app
-COPY --from=build /app/target/spring-petclinic-1.5.1.jar /app
-CMD ["java -jar spring-petclinic-1.5.1.jar"]
+COPY --from=build /app/target/video-stream-collector-1.0.0.jar /app
+CMD ["java -jar video-stream-collector-1.0.0.jar"]
