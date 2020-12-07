@@ -1,0 +1,17 @@
+version: "3.8"
+services:
+  video-collector:
+    build: .
+    ports:
+    volumes:
+    depends_on:
+      - kafka
+      - video-processor
+  video-processor:
+    build: .
+    ports:
+    volumes:
+    depends_on:
+      - kafka
+  kafka:
+    image: wurstmeister/kafka
