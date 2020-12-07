@@ -121,6 +121,7 @@
 				<configuration>
 					<archive>
 						<manifest>
+							<addClasspath>true</addClasspath>
 							<mainClass>com.iot.video.app.spark.processor.VideoStreamProcessor</mainClass>
 						</manifest>
 					</archive>
