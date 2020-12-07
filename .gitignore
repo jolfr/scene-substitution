@@ -3,3 +3,7 @@
 
 # AWS authentication files
 .aws
+
+# Build Ouput Files
+**/dependency-reduced-pom.xml
+**/target
