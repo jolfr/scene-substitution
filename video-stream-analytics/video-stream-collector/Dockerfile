@@ -11,4 +11,4 @@ RUN mvn clean package
 FROM openjdk:8-jre-alpine
 WORKDIR /app
 COPY --from=build /app/target/video-stream-collector-1.0.0.jar /app
-CMD ["java -jar video-stream-collector-1.0.0.jar"]
+CMD ["java -jar original-video-stream-collector-1.0.0.jar"]
