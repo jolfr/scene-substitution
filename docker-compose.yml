@@ -12,7 +12,7 @@ services:
       - kafka
       - zookeeper
     volumes:
-    - processed:~/scene-substitution/output
+    - processed:/home/ubuntu/scene-substitution/output
   zookeeper:
     image: 'bitnami/zookeeper:latest'
     ports:
