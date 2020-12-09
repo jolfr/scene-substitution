@@ -20,7 +20,7 @@ services:
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
-    build: kafka-config/.
+    build: video-stream-analytics\kafka-config\.
     ports:
       - '9092:9092'
     environment:
