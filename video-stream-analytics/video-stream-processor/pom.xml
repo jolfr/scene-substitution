@@ -115,6 +115,12 @@
 									implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
 									<mainClass>com.iot.video.app.spark.processor.VideoStreamProcessor</mainClass>
 								</transformer>
+								<transformer
+                                     implementation="org.apache.maven.plugins.shade.resource.AppendingTransformer">
+                                     <resource>
+                                           META-INF/services/org.apache.spark.sql.sources.DataSourceRegister
+                                     </resource>
+                                </transformer>
 							</transformers>
 						</configuration>
 					</execution>
