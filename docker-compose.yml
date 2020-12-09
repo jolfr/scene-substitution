@@ -11,6 +11,8 @@ services:
     depends_on:
       - kafka
       - zookeeper
+    volumes:
+    - processed:~/scene-substitution/output
   zookeeper:
     image: 'bitnami/zookeeper:latest'
     ports:
@@ -29,3 +31,5 @@ services:
       - ALLOW_PLAINTEXT_LISTENER=yes
     depends_on:
       - zookeeper
+volumes:
+  processed
