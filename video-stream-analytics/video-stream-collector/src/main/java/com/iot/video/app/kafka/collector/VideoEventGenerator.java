@@ -25,6 +25,11 @@ import com.google.gson.JsonObject;
  *
  */
 public class VideoEventGenerator implements Runnable {
+    static {
+        nu.pattern.OpenCV.loadLocally();
+        System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);
+    }
+
 	private static final Logger logger = Logger.getLogger(VideoEventGenerator.class);	
 	private String cameraId;
 	private String url;
