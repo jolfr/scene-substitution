@@ -26,7 +26,7 @@ import com.google.gson.JsonObject;
  */
 public class VideoEventGenerator implements Runnable {
     static {
-        nu.pattern.OpenCV.loadShared();
+        nu.pattern.OpenCV.loadLocally();
         System.loadLibrary(org.opencv.core.Core.NATIVE_LIBRARY_NAME);
     }
 
