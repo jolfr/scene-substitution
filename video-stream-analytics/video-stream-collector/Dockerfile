@@ -8,4 +8,4 @@ COPY --from=clone /app/scene-substitution/video-stream-analytics/video-stream-co
 RUN mvn clean
 RUN mvn clean install
 COPY --from=clone /app/scene-substitution/input /app/input
-CMD ["java", "-jar", "video-stream-collector-1.0.0.jar"]
+CMD ["java", "-jar", "/app/target/video-stream-collector-1.0.0.jar"]
