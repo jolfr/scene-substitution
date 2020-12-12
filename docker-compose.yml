@@ -20,7 +20,7 @@ services:
     environment:
       - ALLOW_ANONYMOUS_LOGIN=yes
   kafka:
-    build: video-stream-analytics/kafka-config/.
+    image: 'bitnami/zookeeper:latest'
     ports:
       - '9092:9092'
     environment:
