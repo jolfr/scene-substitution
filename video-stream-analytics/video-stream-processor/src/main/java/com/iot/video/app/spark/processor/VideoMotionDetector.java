@@ -32,7 +32,8 @@ public class VideoMotionDetector implements Serializable {
 	
 	//load native lib
 	static {
-		 System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
+	    nu.pattern.OpenCV.loadLocally();
+		System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 	}
 	
 	/**
