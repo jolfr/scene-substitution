@@ -7,4 +7,10 @@ WORKDIR /app
 COPY --from=clone app/scene-substitution/video-stream-analytics/video-stream-processor /app
 RUN mvn clean
 RUN mvn clean install
-CMD ["java", "-jar", "/app/target/video-stream-processor-1.0.0.jar"]
+
+FROM openjdk:8-jre-alpine
+WORKDIR /app
+COPY --from=build /app/target/video-stream-collector-1.0.0.jar /app
+RUN mkdir output
+COPY --from=clone /app/scene-substitution/output /app/output
+CMD ["java", "-jar", "video-stream-collector-1.0.0.jar"]
